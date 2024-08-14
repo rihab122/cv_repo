@@ -56,3 +56,9 @@ void startNewGame() {
   pickRandomLeds();
   signalStart();
 }
+void resetGame() {
+  pressedButtonCount = 0;
+  isGameStarted = true;
+  isGameEnded = false;
+  turnOffAllLeds();
+}
