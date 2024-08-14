@@ -33,3 +33,10 @@ void setup() {
 void loop() {
   manageGameState();
 }
+void initializePins() {
+  for (int i = 0; i < TOTAL_LEDS; i++) {
+    pinMode(ledPins[i], OUTPUT);
+    pinMode(buttonPins[i], INPUT_PULLUP);
+  }
+  pinMode(BUZZER_PIN, OUTPUT);
+}
