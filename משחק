@@ -30,3 +30,6 @@ void setup() {
   initializePins();
   randomSeed(analogRead(A1));
 }
+void loop() {
+  manageGameState();
+}
