@@ -40,3 +40,13 @@ void initializePins() {
   }
   pinMode(BUZZER_PIN, OUTPUT);
 }
+
+void manageGameState() {
+  if (isGameEnded) {
+    checkForNewGameStart();
+  } else if (!isGameStarted) {
+    startNewGame();
+  } else {
+    playGame();
+  }
+}
