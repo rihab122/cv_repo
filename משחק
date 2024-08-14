@@ -151,3 +151,11 @@ void indicateVictory() {
   digitalWrite(LED_GREEN_PIN, LOW);
   isGameEnded = true;
 }
+
+void indicateFailure() {
+  tone(BUZZER_PIN, FAILURE_TONE, 500);
+  digitalWrite(LED_RED_PIN, HIGH);
+  delay(1000);
+  digitalWrite(LED_RED_PIN, LOW);
+  isGameEnded = true;
+}
