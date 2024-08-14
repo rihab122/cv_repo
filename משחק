@@ -96,3 +96,51 @@ int getPressedButton() {
   }
   return -1;
 }
+
+void handleButtonPress(int buttonIndex) {
+  pressedButtonIndices[pressedButtonCount] = buttonIndex;
+  pressedButtonCount++;
+
+  if (pressedButtonCount <= CHOSEN_LEDS && buttonIndex == chosenLedIndices[pressedButtonCount - 1]) {
+    digitalWrite(ledPins[buttonIndex], HIGH);
+    delay(500); // ה-LED נדלק אם יש התאמה
+    digitalWrite(ledPins[buttonIndex], LOW);
+  } else {
+    indicateFailure();
+    resetGame();
+    return;
+  }
+
+  if (pressedButtonCount == CHOSEN_LEDS) {
+    unsigned long elapsedTime = millis() - firstButtonPressTime;
+    if (elapsedTime <= 1000) {
+      indicateVictory();
+    } else {
+      indicateFailure();
+    }
+    resetGame();
+  }
+void handleButtonPress(int buttonIndex) {
+  pressedButtonIndices[pressedButtonCount] = buttonIndex;
+  pressedButtonCount++;
+
+  if (pressedButtonCount <= CHOSEN_LEDS && buttonIndex == chosenLedIndices[pressedButtonCount - 1]) {
+    digitalWrite(ledPins[buttonIndex], HIGH);
+    delay(500); // ה-LED נדלק אם יש התאמה
+    digitalWrite(ledPins[buttonIndex], LOW);
+  } else {
+    indicateFailure();
+    resetGame();
+    return;
+  }
+
+  if (pressedButtonCount == CHOSEN_LEDS) {
+    unsigned long elapsedTime = millis() - firstButtonPressTime;
+    if (elapsedTime <= 1000) {
+      indicateVictory();
+    } else {
+      indicateFailure();
+    }
+    resetGame();
+  }
+
