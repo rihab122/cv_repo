@@ -25,3 +25,8 @@ bool isGameEnded = false;
 
 #define VICTORY_TONE 1000
 #define FAILURE_TONE 500
+
+void setup() {
+  initializePins();
+  randomSeed(analogRead(A1));
+}
