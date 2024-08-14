@@ -67,9 +67,14 @@ void pickRandomLeds() {
   for (int i = 0; i < CHOSEN_LEDS; i++) {
     chosenLedIndices[i] = random(TOTAL_LEDS);
     digitalWrite(ledPins[chosenLedIndices[i]], HIGH);
-    delay(1000); // אורות ה-LED נדלקים למשך שניה
+    delay(1000); 
     digitalWrite(ledPins[chosenLedIndices[i]], LOW);
-    delay(100); // עיכוב קצר לפני הדלקת ה-LED הבא
+    delay(100); 
   }
-  delay(500); // עיכוב קצר לפני השמעת הצליל
+  delay(500); // 
 }
+void signalStart() {
+  tone(BUZZER_PIN, VICTORY_TONE, 100);
+  delay(150);
+}
+
