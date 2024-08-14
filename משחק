@@ -50,3 +50,9 @@ void manageGameState() {
     playGame();
   }
 }
+
+void startNewGame() {
+  resetGame();
+  pickRandomLeds();
+  signalStart();
+}
