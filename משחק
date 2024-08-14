@@ -144,3 +144,10 @@ void handleButtonPress(int buttonIndex) {
     resetGame();
   }
 
+void indicateVictory() {
+  tone(BUZZER_PIN, VICTORY_TONE, 500);
+  digitalWrite(LED_GREEN_PIN, HIGH);
+  delay(10000); // הלד הירוק נדלק למשך 10 שניות
+  digitalWrite(LED_GREEN_PIN, LOW);
+  isGameEnded = true;
+}
