@@ -12,3 +12,16 @@
 
 #define TOTAL_LEDS 4
 #define CHOSEN_LEDS 3
+
+int ledPins[TOTAL_LEDS] = {LED_GREEN_PIN, LED_YELLOW_PIN, LED_BLUE_PIN, LED_RED_PIN};
+int buttonPins[TOTAL_LEDS] = {BUTTON_GREEN_PIN, BUTTON_YELLOW_PIN, BUTTON_BLUE_PIN, BUTTON_RED_PIN}; 
+int chosenLedIndices[CHOSEN_LEDS];
+int pressedButtonIndices[CHOSEN_LEDS];
+int pressedButtonCount = 0;
+unsigned long gameStartTime;
+unsigned long firstButtonPressTime;
+bool isGameStarted = false;
+bool isGameEnded = false;
+
+#define VICTORY_TONE 1000
+#define FAILURE_TONE 500
