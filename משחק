@@ -156,3 +156,9 @@ void turnOffAllLeds() {
     digitalWrite(ledPins[i], LOW);
   }
 }
+void checkForNewGameStart() {
+  int pressedButton = getPressedButton();
+  if (pressedButton > -1) {
+    startNewGame();
+  }
+}
