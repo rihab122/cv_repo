@@ -11,3 +11,20 @@
     <header>
         <h1>מערכת ניהול ביקורים</h1>
     </header>
+<section class="form-section">
+    <h2>הוסף נקודת ביקור חדשה</h2>
+    <form id="addVisitForm">
+        <label for="visitId">מספר נקודה:</label>
+        <input type="text" id="visitId" name="visitId" required>
+
+        <label for="guardName">שם השומר:</label>
+        <input type="text" id="guardName" name="guardName" required>
+
+        <label for="status">סטטוס:</label>
+        <select id="status" name="status">
+            <option value="הושלם">הושלם</option>
+            <option value="במהלך">במהלך</option>
+        </select>
+        <button type="submit">הוסף ביקור</button>
+    </form>
+</section>
