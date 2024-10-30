@@ -61,3 +61,6 @@
     <p>ביקורים שהושלמו: <span id="completedVisits">0</span></p>
     <p>ביקורים בתהליך: <span id="inProgressVisits">0</span></p>
 </section>
+<script src="bd.js"></script>
+</body>
+</html>
