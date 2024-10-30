@@ -55,3 +55,7 @@
     </table>
     <button onclick="exportToExcel()">ייצוא ל-Excel</button>
 </section>
+<section class="log-section">
+    <h2>יומן פעילות</h2>
+    <ul id="activityLog"></ul>
+</section>
