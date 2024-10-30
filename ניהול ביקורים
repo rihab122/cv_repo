@@ -34,3 +34,21 @@
         <option value="במהלך">במהלך</option>
     </select>
 </section>
+<section class="table-section">
+    <h2>רשימת ביקורים</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>מספר נקודה</th>
+                <th>שם השומר</th>
+                <th>זמן ביקור</th>
+                <th>סטטוס</th>
+                <th>פעולות</th>
+            </tr>
+        </thead>
+        <tbody id="visitTableBody">
+            <!-- ביקורים נוספים כאן באופן אוטומטי -->
+        </tbody>
+    </table>
+    <button onclick="exportToExcel()">ייצוא ל-Excel</button>
+</section>
