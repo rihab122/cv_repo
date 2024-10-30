@@ -32,3 +32,6 @@ app.put('/visits/:id', (req, res) => {
     });
     res.status(200).json(visits.find(visit => visit.pointId === updateId));
 });
+app.get('/visits', (req, res) => {
+    res.json(visits);
+});
