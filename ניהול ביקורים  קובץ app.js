@@ -35,3 +35,6 @@ app.put('/visits/:id', (req, res) => {
 app.get('/visits', (req, res) => {
     res.json(visits);
 });
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
