@@ -77,3 +77,17 @@ function logActivity(action, details) {
     logEntry.innerText = `${new Date().toLocaleString()} - ${action}: ${details}`;
     logList.appendChild(logEntry);
 }
+function updateStats() {
+    const rows = document.getElementById("visitTableBody").getElementsByTagName("tr");
+    let completedCount = 0;
+    let inProgressCount = 0;
+
+    for (let i = 0; i < rows.length; i++) {
+        const status = rows[i].cells[3].innerText;
+        if (status === "הושלם") completedCount++;
+        if (status === "במהלך") inProgressCount++;
+    }
+
+    document.getElementById("completedVisits").innerText = completedCount;
+    document.getElementById("inProgressVisits").innerText = inProgressCount;
+}
