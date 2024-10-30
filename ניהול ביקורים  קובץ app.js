@@ -28,3 +28,17 @@ async function updateVisit() {
     });
     loadVisits();
 }
+async function loadVisits() {
+    const response = await fetch('/visits');
+    const visits = await response.json();
+    const visitsList = document.getElementById('visitsList');
+    
+    visitsList.innerHTML = visits.map(visit => `
+        <div class="visit-item">
+            <p><strong>ID:</strong> ${visit.pointId}</p>
+            <p><strong>שם שומר:</strong> ${visit.guardName}</p>
+            <p><strong>סטטוס:</strong> ${visit.status}</p>
+            <p><strong>זמן ביקור:</strong> ${new Date(visit.visitTime).toLocaleString()}</p>
+        </div>
+    `).join('');
+}
