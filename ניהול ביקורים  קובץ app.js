@@ -20,3 +20,15 @@ app.delete('/visits/:id', (req, res) => {
     visits = visits.filter(visit => visit.pointId !== deleteId);
     res.status(204).send();
 });
+app.put('/visits/:id', (req, res) => {
+    const updateId = req.params.id;
+    const { guardName, status } = req.body;
+
+    visits = visits.map(visit => {
+        if (visit.pointId === updateId) {
+            return { ...visit, guardName, status };
+        }
+        return visit;
+    });
+    res.status(200).json(visits.find(visit => visit.pointId === updateId));
+});
