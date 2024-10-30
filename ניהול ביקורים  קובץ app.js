@@ -15,3 +15,8 @@ app.post('/visits', (req, res) => {
     res.status(201).json(newVisit);
 });
 
+app.delete('/visits/:id', (req, res) => {
+    const deleteId = req.params.id;
+    visits = visits.filter(visit => visit.pointId !== deleteId);
+    res.status(204).send();
+});
