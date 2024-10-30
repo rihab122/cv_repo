@@ -54,3 +54,20 @@ function filterVisits() {
         rows[i].style.display = (filterStatus === "all" || status === filterStatus) ? "" : "none";
     }
 }
+function exportToExcel() {
+    const table = document.getElementById("visitTableBody");
+    const data = [];
+
+    for (let i = 0, row; row = table.rows[i]; i++) {
+        const rowData = [];
+        for (let j = 0, col; col = row.cells[j]; j++) {
+            rowData.push(col.innerText);
+        }
+        data.push(rowData);
+    }
+
+    const ws = XLSX.utils.aoa_to_sheet(data);
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "Visits");
+    XLSX.writeFile(wb, "ביקורים.xlsx");
+}
