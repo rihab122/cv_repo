@@ -56,3 +56,8 @@
     <h2>יומן פעילות</h2>
     <ul id="activityLog"></ul>
 </section>
+<section class="stats-section">
+    <h2>סטטיסטיקה</h2>
+    <p>ביקורים שהושלמו: <span id="completedVisits">0</span></p>
+    <p>ביקורים בתהליך: <span id="inProgressVisits">0</span></p>
+</section>
