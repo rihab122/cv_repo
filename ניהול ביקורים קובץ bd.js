@@ -23,3 +23,12 @@ document.getElementById('addVisitForm').addEventListener('submit', function (e) 
     updateStats();
     document.getElementById('addVisitForm').reset();
 });
+function deleteVisit(button) {
+    if (confirm("האם אתה בטוח שברצונך למחוק ביקור זה?")) {
+        const row = button.parentElement.parentElement;
+        const visitId = row.cells[0].innerText;
+        logActivity("מחיקת ביקור", ` מספר נקודה: ${visitId}`);
+        row.remove();
+        updateStats();
+    }
+}
