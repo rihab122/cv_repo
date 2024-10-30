@@ -71,3 +71,9 @@ function exportToExcel() {
     XLSX.utils.book_append_sheet(wb, ws, "Visits");
     XLSX.writeFile(wb, "ביקורים.xlsx");
 }
+function logActivity(action, details) {
+    const logList = document.getElementById("activityLog");
+    const logEntry = document.createElement("li");
+    logEntry.innerText = `${new Date().toLocaleString()} - ${action}: ${details}`;
+    logList.appendChild(logEntry);
+}
