@@ -42,3 +42,4 @@ async function loadVisits() {
         </div>
     `).join('');
 }
+loadVisits();
