@@ -25,3 +25,12 @@
         <button type="submit">הוסף ביקור</button>
     </form>
 </section>
+<section class="filter-section">
+    <h2>סינון ביקורים</h2>
+    <label for="filterStatus">לפי סטטוס:</label>
+    <select id="filterStatus" onchange="filterVisits()">
+        <option value="all">הכל</option>
+        <option value="הושלם">הושלם</option>
+        <option value="במהלך">במהלך</option>
+    </select>
+</section>
