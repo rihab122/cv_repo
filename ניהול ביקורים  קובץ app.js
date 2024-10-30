@@ -10,3 +10,9 @@ async function addVisit() {
     });
     loadVisits();
 }
+async function deleteVisit() {
+    const deleteId = document.getElementById('deleteId').value;
+
+    await fetch(`/visits/${deleteId}`, { method: 'DELETE' });
+    loadVisits();
+}
