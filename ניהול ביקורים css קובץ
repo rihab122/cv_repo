@@ -48,3 +48,6 @@ th {
     background-color: #18441a;
     color: white;
 }
+td {
+    text-align: center;
+}
