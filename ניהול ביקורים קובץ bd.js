@@ -44,3 +44,13 @@ function editVisit(button) {
         updateStats();
     }
 }
+function filterVisits() {
+    const filterStatus = document.getElementById("filterStatus").value;
+    const tableBody = document.getElementById("visitTableBody");
+    const rows = tableBody.getElementsByTagName("tr");
+
+    for (let i = 0; i < rows.length; i++) {
+        const status = rows[i].cells[3].innerText;
+        rows[i].style.display = (filterStatus === "all" || status === filterStatus) ? "" : "none";
+    }
+}
