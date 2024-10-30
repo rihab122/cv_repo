@@ -32,3 +32,15 @@ function deleteVisit(button) {
         updateStats();
     }
 }
+function editVisit(button) {
+    if (confirm("האם אתה בטוח שברצונך לערוך ביקור זה?")) {
+        const row = button.parentElement.parentElement;
+        const visitId = row.cells[0].innerText;
+        document.getElementById('visitId').value = row.cells[0].innerText;
+        document.getElementById('guardName').value = row.cells[1].innerText;
+        document.getElementById('status').value = row.cells[3].innerText;
+        logActivity("עריכת ביקור", ` מספר נקודה: ${visitId}`);
+        row.remove();
+        updateStats();
+    }
+}
