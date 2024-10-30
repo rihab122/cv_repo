@@ -16,3 +16,15 @@ async function deleteVisit() {
     await fetch(`/visits/${deleteId}`, { method: 'DELETE' });
     loadVisits();
 }
+async function updateVisit() {
+    const updateId = document.getElementById('updateId').value;
+    const guardName = document.getElementById('updateGuardName').value;
+    const status = document.getElementById('updateStatus').value;
+
+    await fetch(`/visits/${updateId}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ guardName, status }),
+    });
+    loadVisits();
+}
